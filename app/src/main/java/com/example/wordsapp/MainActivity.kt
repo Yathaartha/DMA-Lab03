@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity() {
         chooseLayout()
     }
 
+    /*
+    * Creates the menu from the XML file layout_menu.xml
+     */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.layout_menu, menu)
 
@@ -53,6 +56,9 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    /*
+    * Handles the click of the menu item
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_switch_layout -> {
@@ -73,6 +79,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /*
+    * Sets the layout for the View
+     */
     private fun chooseLayout() {
         if (isLinearLayoutManager) {
             recyclerView.layoutManager = LinearLayoutManager(this)
@@ -82,6 +91,9 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = LetterAdapter()
     }
 
+    /*
+    * Set icon for the current menu style
+     */
     private fun setIcon(menuItem: MenuItem?) {
         if (menuItem == null)
             return
